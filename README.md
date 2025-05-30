@@ -134,12 +134,7 @@ resource "aws_instance" "public_server" {
 }
 
 
-# Private Subnet DB Server
-resource "aws_instance" "private_server" {
-  ami                    = "ami-0195204d5dce06d99"  #Write a valid AMI id here
-  instance_type          = "t2.micro"
-  subnet_id              = aws_subnet.private.id
-  vpc_security_group_ids = [aws_security_group.private_sg.id]
+
   key_name               = "your_key_pair" 
 
  tags = {
